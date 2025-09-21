@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>شركة 3RMCC للمقاولات</title>
+  <meta name="description" content="شركة 3RMCC للمقاولات – تنفيذ مشاريع البنية التحتية والمباني بأعلى معايير الجودة.">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{
+      --primary:#caa154;         /* ذهبي */
+      --primary-700:#b88f41;
+      --dark:#0b1220;            /* كحلي داكن */
+      --muted:#95a2b3;
+      --card:#121a2b;
+      --surface:#0f1729;
+      --white:#fff;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:'Tajawal',system-ui,-apple-system,Segoe UI,Roboto; background:var(--dark); color:var(--white); scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1200px,92%);margin-inline:auto}
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.7);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid #1b2333}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
+    .brand{display:flex;gap:.6rem;align-items:center}
+    .brand .logo{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--primary),#e0c88d);display:grid;place-items:center;color:#111;font-weight:800}
+    .brand .name{font-weight:800;letter-spacing:.5px}
+    .links{display:flex;gap:1.2rem;align-items:center}
+    .links a{color:#dbe2ee;font-weight:600;opacity:.9}
+    .links a:hover{color:var(--primary)}
+    .cta{padding:.55rem .95rem;background:var(--primary);color:#111;border-radius:8px;font-weight:800}
+    .menu{display:none}
+    @media(max-width:860px){
+      .menu{display:block}
+      .links{position:fixed;inset-inline:0;top:64px;background:var(--surface);border-bottom:1px solid #1b2333;display:none;flex-direction:column;padding:1rem}
+      .links.open{display:flex}
+    }
+    /* Hero */
+    .hero{position:relative;isolation:isolate}
+    .hero .bg{position:absolute;inset:0;z-index:-1;background:
+      linear-gradient(180deg,rgba(11,18,32,.35),var(--dark)),
+      url('https://images.unsplash.com/photo-1523419409543-a0d7d1f3c7b5?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat}
+    .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;min-height:78vh;padding:4rem 0}
+    @media(max-width:980px){.hero .wrap{grid-template-columns:1fr}}
+    .eyebrow{color:var(--primary);font-weight:800;letter-spacing:.5px;margin-bottom:.6rem}
+    .title{font-size:clamp(28px,3.2vw,44px);line-height:1.25;margin:0 0 1rem}
+    .lead{color:#c7d1df;max-width:48ch}
+    .hero .actions{display:flex;gap:.8rem;margin-top:1.3rem;flex-wrap:wrap}
+    .btn{padding:.85rem 1.05rem;border-radius:10px;font-weight:800}
+    .btn.primary{background:var(--primary);color:#111}
+    .btn.ghost{border:1px solid #2a3550;color:#dbe2ee}
+    .card{background:var(--card);border:1px solid #1c2740;border-radius:14px;padding:1rem}
+    .card .stat{font-size:28px;font-weight:800;color:var(--primary)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    @media(max-width:980px){.grid-3{grid-template-columns:1fr}}
+    section{padding:64px 0;border-top:1px solid #121b31}
+    .section-title{font-size:28px;margin:0 0 .35rem}
+    .muted{color:var(--muted)}
+    /* Services */
+    .services .item{background:var(--card);border:1px solid #1c2740;border-radius:14px;padding:1.2rem}
+    .services .icon{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:#1b2336;color:var(--primary)}
+    .services h3{margin:.7rem 0 .3rem}
+    /* Projects */
+    .proj{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    @media(max-width:980px){.proj{grid-template-columns:1fr}}
+    .proj .p{position:relative;border-radius:14px;overflow:hidden;border:1px solid #1c2740}
+    .proj .p img{aspect-ratio:16/10;object-fit:cover;filter:contrast(1.05) saturate(1.05)}
+    .proj .badge{position:absolute;inset:auto 12px 12px auto;background:rgba(0,0,0,.55);color:#fff;padding:.35rem .6rem;border-radius:999px;border:1px solid rgba(255,255,255,.2);font-size:13px}
+    /* Clients */
+    .clients{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;align-items:center}
+    @media(max-width:980px){.clients{grid-template-columns:repeat(3,1fr)}}
+    .clients .c{background:#11182b;border:1px dashed #24304a;border-radius:12px;padding:14px;display:grid;place-items:center;color:#a9b5c8}
+    /* Contact */
+    form{display:grid;gap:.75rem}
+    input,textarea{background:#0f1729;border:1px solid #1e2a45;color:#dbe2ee;border-radius:10px;padding:.9rem}
+    textarea{min-height:140px;resize:vertical}
+    .cols{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+    @media(max-width:720px){.cols{grid-template-columns:1fr}}
+    footer{padding:28px 0;border-top:1px solid #121b31;color:#a8b2c3}
+    .whatsapp{position:fixed;left:18px;bottom:18px;background:#25d366;color:#111;padding:12px 14px;border-radius:999px;font-weight:800;box-shadow:0 6px 18px rgba(37,211,102,.35);z-index:40}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">3R</div>
+      <div class="name">شركة ركن الالفية الثالثة للمقاولات</div>
+    </div>
+    <nav class="links" id="navLinks">
+      <a href="#about">من نحن</a>
+      <a href="#services">الخدمات</a>
+      <a href="#projects">المشاريع</a>
+      <a href="#clients">عملاؤنا</a>
+      <a href="#contact" class="cta">تواصل معنا</a>
+    </nav>
+    <button class="menu btn ghost" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="bg"></div>
+  <div class="container wrap">
+    <div>
+      <div class="eyebrow">حلول تنفيذ متكاملة</div>
+      <h1 class="title">نُنفّذ مشاريعكم بأعلى معايير الجودة والسلامة والالتزام.</h1>
+      <p class="lead">
+        شركة <b>3RMCC</b> للمقاولات العامة — خبرة في تنفيذ مشاريع البنية التحتية والمباني وإدارة المشاريع من التصميم حتى التسليم، وفق أفضل الممارسات العالمية.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="#contact"><i class="fa-solid fa-envelope"></i> تواصل الآن</a>
+        <a class="btn ghost" href="docs/company-profile.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-arrow-down"></i> تنزيل بروفايل الشركة</a>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="stat" id="s1">0</div><div class="muted">مشروع منجز</div></div>
+      <div class="card"><div class="stat" id="s2">0</div><div class="muted">عميل سعيد</div></div>
+      <div class="card"><div class="stat" id="s3">0</div><div class="muted">عام خبرة</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">من نحن</h2>
+    <p class="muted">نوفّر حلول مقاولات شاملة تشمل الدراسات الهندسية، إدارة المشتريات، التنفيذ، وضبط الجودة، مع التزام كامل بمعايير السلامة والوقت والتكلفة.</p>
+    <div class="grid-3" style="margin-top:1rem">
+      <div class="services item">
+        <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>جودة وسلامة</h3>
+        <p class="muted">أنظمة جودة صارمة وتطبيق شامل لاشتراطات السلامة.</p>
+      </div>
+      <div class="services item">
+        <div class="icon"><i class="fa-solid fa-clock"></i></div>
+        <h3>التزام بالمواعيد</h3>
+        <p class="muted">برامج زمنية دقيقة وإدارة مخاطر فاعلة.</p>
+      </div>
+      <div class="services item">
+        <div class="icon"><i class="fa-solid fa-handshake"></i></div>
+        <h3>شراكة مستدامة</h3>
+        <p class="muted">نؤمن بعلاقات طويلة الأمد مبنية على الثقة والنتائج.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="container">
+    <h2 class="section-title">الخدمات</h2>
+    <p class="muted">نقدم باقة متكاملة من خدمات المقاولات.</p>
+    <div class="grid-3" style="margin-top:1rem">
+      <div class="item">
+        <div class="icon"><i class="fa-solid fa-building"></i></div>
+        <h3>إنشاء المباني</h3>
+        <p class="muted">سكنية، تجارية، وإدارية — تسليم على المفتاح.</p>
+      </div>
+      <div class="item">
+        <div class="icon"><i class="fa-solid fa-road"></i></div>
+        <h3>البنية التحتية</h3>
+        <p class="muted">طرق، شبكات مياه وصرف، إنارة، ومساحات خارجية.</p>
+      </div>
+      <div class="item">
+        <div class="icon"><i class="fa-solid fa-helmet-safety"></i></div>
+        <h3>إدارة المشاريع</h3>
+        <p class="muted">إدارة متكاملة للتكلفة والوقت والنطاق والجودة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">مشروعات مختارة</h2>
+    <p class="muted">لقطات من أعمالنا (يمكنك استبدال الصور لاحقًا).</p>
+    <div class="proj" style="margin-top:1rem">
+      <div class="p">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop" alt="project">
+        <span class="badge">مبنى إداري</span>
+      </div>
+      <div class="p">
+        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=1400&auto=format&fit=crop" alt="project">
+        <span class="badge">طرق وبنية تحتية</span>
+      </div>
+      <div class="p">
+        <img src="https://images.unsplash.com/photo-1523419409543-a0d7d1f3c7b5?q=80&w=1400&auto=format&fit=crop" alt="project">
+        <span class="badge">مرافق عامة</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="container">
+    <h2 class="section-title">عملاؤنا</h2>
+    <p class="muted">نفخر بثقة شركائنا.</p>
+    <div class="clients" style="margin-top:1rem">
+      <div class="c">LOGO</div><div class="c">LOGO</div><div class="c">LOGO</div>
+      <div class="c">LOGO</div><div class="c">LOGO</div><div class="c">LOGO</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">تواصل معنا</h2>
+    <p class="muted">راسلنا وسيتم التواصل معك سريعًا.</p>
+
+    <div class="grid-3" style="grid-template-columns:1.1fr .9fr;gap:1rem;margin-top:1rem">
+      <div class="card">
+        <form id="contactForm" action="mailto:info@3rmcc.com" method="post" enctype="text/plain">
+          <div class="cols">
+            <input name="name" placeholder="الاسم" required />
+            <input name="phone" placeholder="رقم الجوال" />
+          </div>
+          <input name="email" type="email" placeholder="البريد الإلكتروني" required />
+          <textarea name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+          <button class="btn primary" type="submit"><i class="fa-solid fa-paper-plane"></i> إرسال</button>
+          <div class="muted" style="margin-top:.4rem;font-size:13px">
+            * إذا أردت فورم احترافي بدون فتح برنامج البريد، استبدل الـ action بـ <b>Formspree</b> لاحقًا.
+          </div>
+        </form>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:.4rem">معلومات الاتصال</h3>
+        <p class="muted">البريد: <a href="mailto:info@3rmcc.com">info@3rmcc.com</a></p>
+        <p class="muted">الهاتف: <a href="tel:+966000000000">+966 00 000 0000</a></p>
+        <p class="muted">العنوان: …</p>
+        <hr style="border-color:#1c2740;margin:1rem 0">
+        <p class="muted">تابعنا: 
+          <a href="#" style="color:var(--primary)">تويتر</a> • 
+          <a href="#" style="color:var(--primary)">لينكدإن</a> • 
+          <a href="#" style="color:var(--primary)">إنستغرام</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+    <div>© <span id="y"></span> شركة 3RMCC للمقاولات. جميع الحقوق محفوظة.</div>
+    <div class="muted">صنع بالاهتمام.</div>
+  </div>
+</footer>
+
+<a class="whatsapp" target="_blank" href="https://wa.me/966000000000?text=السلام%20عليكم%20أرغب%20بالتواصل%20حول%20خدمات%203RMCC">
+  <i class="fa-brands fa-whatsapp"></i> واتساب
+</a>
+
+<script>
+  // القائمة للجوال
+  const nav = document.getElementById('navLinks');
+  document.getElementById('menuBtn').onclick = () => nav.classList.toggle('open');
+
+  // عدادات بسيطة
+  const targets = [{id:'s1',to:42},{id:'s2',to:120},{id:'s3',to:12}];
+  targets.forEach(t=>{
+    const el = document.getElementById(t.id);
+    let i=0; const step=Math.max(1,Math.floor(t.to/60));
+    const it = setInterval(()=>{ i+=step; if(i>=t.to){i=t.to;clearInterval(it)} el.textContent=i; },25);
+  });
+  // سنة
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
