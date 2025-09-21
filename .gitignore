@@ -1,0 +1,14 @@
+# deps & builds
+node_modules
+.next
+.vercel
+dist
+out
+turbo
+# logs & env
+*.log
+.env
+.env.*
+# cache
+.cache
+.DS_Store
